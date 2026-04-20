@@ -64,6 +64,12 @@
 - ADR: `books/{書籍ディレクトリ}/adrs/{番号:03d}-{slug}.md`
   - 例: `adrs/001-layered-vs-modular-monolith.md`
 
+## commit 操作の注意事項
+
+- `git commit --amend` の前に必ず `git log --oneline origin/main -1` でリモートの最新コミットを確認する
+- ローカルの最新コミットとリモートの最新コミットが一致している場合は amend しない。代わりに新しいコミットを作る
+- ユーザーが明示的に「amend して」と言った場合も、リモートと一致していれば警告してから判断を仰ぐ
+
 ## commit メッセージ規則
 
 ```
